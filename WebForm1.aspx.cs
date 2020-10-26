@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace AdoDemo
 {
@@ -12,7 +13,7 @@ namespace AdoDemo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string cs = "data source=.; database = Sample; integrated security=SSPI";
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             SqlConnection con = new SqlConnection();
             con.ConnectionString = cs;
             try
