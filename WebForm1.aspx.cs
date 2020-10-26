@@ -33,12 +33,30 @@ namespace AdoDemo
             }
         }
 
+
+        //Parameterized Query
         protected void Button1_Click(object sender, EventArgs e)
         {
             string ConnectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand("Select * from tblProductInventory where Product like @ProductName", connection);
+                cmd.Parameters.AddWithValue("@ProductName", TextBox1.Text + "%");
+                connection.Open();
+                GridView1.DataSource = cmd.ExecuteReader();
+                GridView1.DataBind();
+            }
+        }
+
+
+        //Stored Procedure
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("spGetProductByName", connection);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ProductName", TextBox1.Text + "%");
                 connection.Open();
                 GridView1.DataSource = cmd.ExecuteReader();
