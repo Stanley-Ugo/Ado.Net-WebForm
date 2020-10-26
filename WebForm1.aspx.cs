@@ -15,11 +15,21 @@ namespace AdoDemo
             string cs = "data source=.; database = Sample; integrated security=SSPI";
             SqlConnection con = new SqlConnection();
             con.ConnectionString = cs;
-            SqlCommand cmd = new SqlCommand("Select * from tblEmployee", con);
-            con.Open();
-            GridView1.DataSource = cmd.ExecuteReader();
-            GridView1.DataBind();
-            con.Close();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("Select * from tblEmployee", con);
+                con.Open();
+                GridView1.DataSource = cmd.ExecuteReader();
+                GridView1.DataBind();
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }
