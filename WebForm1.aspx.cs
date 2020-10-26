@@ -35,7 +35,12 @@ namespace AdoDemo
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string ConnectionString = ConfigurationManager.ConnectionStrings
+            string ConnectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("Select * from tblProductInventory where Product like @ProductName", connection);
+
+            }
         }
     }
 }
