@@ -39,7 +39,10 @@ namespace AdoDemo
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand("Select * from tblProductInventory where Product like @ProductName", connection);
-
+                cmd.Parameters.AddWithValue("@ProductName", TextBox1.Text + "%");
+                connection.Open();
+                GridView1.DataSource = cmd.ExecuteReader();
+                GridView1.DataBind();
             }
         }
     }
