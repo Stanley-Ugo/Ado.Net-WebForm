@@ -67,7 +67,7 @@ namespace AdoDemo
         //Transactions in ADO.NET
         private void GetData()
         {
-            
+            string cs = ConfigurationManager.ConnectionStrings["CS"].ConnectionString;
         }
     }
 }
