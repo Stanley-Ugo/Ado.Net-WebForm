@@ -71,6 +71,8 @@ namespace AdoDemo
             using (SqlConnection con = new SqlConnection(cs))
             {
                 SqlCommand cmd = new SqlCommand("Select * from Accounts", con);
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
             }
         }
     }
