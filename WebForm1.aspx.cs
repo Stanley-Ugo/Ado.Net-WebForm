@@ -68,6 +68,10 @@ namespace AdoDemo
         private void GetData()
         {
             string cs = ConfigurationManager.ConnectionStrings["CS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+
+            }
         }
     }
 }
