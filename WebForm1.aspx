@@ -14,5 +14,29 @@
             <asp:GridView ID="GridView1" runat="server"></asp:GridView>
         </div>
     </form>
+    <table>
+        <tr>
+            <td>
+                <asp:Label ID="lblAccountNumber1" runat="server" Text="Label"></asp:Label>
+            </td>
+            <td>
+                <asp:Label ID="lblBalance1" runat="server" Text="Label"></asp:Label>
+            </td>
+            <td>
+                <asp:Label ID="lblName1" runat="server" Text="Label"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Label ID="lblAccountNumber2" runat="server" Text="Label"></asp:Label>
+            </td>
+            <td>
+                <asp:Label ID="lblBalance2" runat="server" Text="Label"></asp:Label>
+            </td>
+            <td>
+                <asp:Label ID="lblName2" runat="server" Text="Label"></asp:Label>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

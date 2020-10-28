@@ -73,6 +73,13 @@ namespace AdoDemo
                 SqlCommand cmd = new SqlCommand("Select * from Accounts", con);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    if (rdr["AccountNumber"].ToString() == "A1")
+                    {
+                        lblAccountNumber1.Text = "A1";
+                    }
+                }
             }
         }
     }
