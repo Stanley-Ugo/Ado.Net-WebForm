@@ -78,6 +78,14 @@ namespace AdoDemo
                     if (rdr["AccountNumber"].ToString() == "A1")
                     {
                         lblAccountNumber1.Text = "A1";
+                        lblBalance1.Text = rdr["Balance"].ToString();
+                        lblName1.Text = rdr["CustomerName"].ToString();
+                    }
+                    else
+                    {
+                        lblAccountNumber2.Text = "A1";
+                        lblBalance2.Text = rdr["Balance"].ToString();
+                        lblName2.Text = rdr["CustomerName"].ToString();
                     }
                 }
             }
