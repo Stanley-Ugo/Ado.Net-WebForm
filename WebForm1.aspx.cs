@@ -70,7 +70,7 @@ namespace AdoDemo
             string cs = ConfigurationManager.ConnectionStrings["CS"].ConnectionString;
             using (SqlConnection con = new SqlConnection(cs))
             {
-
+                SqlCommand cmd = new SqlCommand("Select * from Accounts", con);
             }
         }
     }
