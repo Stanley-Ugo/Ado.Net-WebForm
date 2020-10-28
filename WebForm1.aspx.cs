@@ -63,5 +63,11 @@ namespace AdoDemo
                 GridView1.DataBind();
             }
         }
+
+        //Transactions in ADO.NET
+        private void GetData()
+        {
+            
+        }
     }
 }
